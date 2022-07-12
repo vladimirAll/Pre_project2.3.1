@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<h1>Transfers NHL 22-23</h1>
+<div>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Old club</th>
+            <th>New club</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="player : ${user}">
+            <td th:utext="${player.getName()}">name</td>
+            <td th:utext="${player.getOldClub()}">oldClub</td>
+            <td th:utext="${player.getNewClub}">newClub</td>
+            <td>
+                <a th:href="@{update/{id} (id=${player.id})}">Update</a>
+                <a th:href="@{delete/{id} (id=${player.id})}">Delete</a>
+
+            </td>
+        </tr>
+    </table>
+</div>
+<a href="/new">Add new player</a>
+</body>
+</html>

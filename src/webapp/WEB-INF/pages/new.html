@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New player</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/user}" th:object="${user}">
+    <label for="name">Enter name</label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <br/>
+    <label for="oldClub">Enter old club</label>
+    <input type="text" th:field="*{oldClub}" id="oldClub"/>
+    <br/>
+    <label for="newClub">Enter new club</label>
+    <input type="text" th:field="*{newClub}" id="newClub"/>
+    <br/>
+    <input type="submit" value="Add player"/>
+</form>
+
+</body>
+</html>
